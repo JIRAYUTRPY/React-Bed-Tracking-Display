@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { initializeApp } from "firebase/app";
-import { getDatabase, ref, onValue } from "firebase/database";
-import { firebaseConfig } from "../hook/FirebaseHook";
-import { Menu, Table, Tag } from "antd";
+import { useEffect, useState } from "react";
+import { onValue, ref } from "firebase/database";
+// import { DATABASE_CONTAINER } from "../hook/useFirebase";
+import { db } from "../hook/useFirebaseAuth";
+import { Table, Tag } from "antd";
 const columns2 = [
   {
     title: "Tag No",
@@ -47,10 +47,8 @@ const columns2 = [
 const DataDisplay = () => {
   const [dataArray, setDataArray] = useState([]);
   useEffect(() => {
-    const app = initializeApp(firebaseConfig);
-    const db = getDatabase(app);
-    const settingRef = ref(db, "DATA");
-    return onValue(settingRef, (snapshot) => {
+    const dataLogsRef = ref(db, "logs");
+    return onValue(dataLogsRef, (snapshot) => {
       const data = snapshot.val();
       if (snapshot.exists()) {
         setDataArray([]);
