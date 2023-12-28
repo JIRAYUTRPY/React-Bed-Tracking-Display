@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import Main from "./pages/main";
+import Home from "./pages/Home";
 import Signin from "./pages/signin";
 import { useAuthContext } from "./context/authentication";
 
@@ -11,14 +11,14 @@ function App() {
       {auth.isAuthenicated ? (
         <>
           <Route path="/">
-            <Route index element={<Main />} />
+            <Route index element={<Home />} />
           </Route>
         </>
       ) : (
         <>
           <Route path="/">
             <Route index element={<Signin />} />
-            <Route path="home" element={<Main />} />
+            <Route path="home" element={<Home />} />
           </Route>
         </>
       )}

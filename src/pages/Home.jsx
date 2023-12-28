@@ -27,7 +27,7 @@ const items = [
   },
 ];
 
-function Main() {
+function Home() {
   const [page, setPage] = useState("data");
   const onClick = (e) => {
     setPage(e.key);
@@ -60,4 +60,4 @@ function Main() {
   );
 }
 
-export default Main;
+export default Home;
