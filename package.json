@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite && react-dotenv && react-scripts start",
-    "build": "vite build",
+    "build": "vite && react-dotenv && react-scripts build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
@@ -31,17 +31,5 @@
     "postcss": "^8.4.32",
     "tailwindcss": "^3.3.6",
     "vite": "^5.0.0"
-  },
-  "react-dotenv": {
-    "whitelist": [
-      "API_KEY",
-      "AUTH_DOMAIN",
-      "DATABASE_URL",
-      "PROJECT_ID",
-      "STORAGE_BUCKET",
-      "MESSAGE_SENDER_ID",
-      "APP_ID",
-      "MEASUREMENT_ID"
-    ]
   }
 }
